@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            border: 2px solid #d8d8d8; /* Grey border */
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ff8a5c; /* Muted orange for heading */
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #d2794c; /* Muted orange for labels */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #d8d8d8; /* Grey border for input fields */
+            border-radius: 5px;
+            background-color: #f9f9f9; /* Light grey for input background */
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff8a5c; /* Muted orange for button */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e67a45; /* Darker muted orange on hover */
+        }
+
+        p {
+            text-align: center;
+            color: #d2794c;
+            font-size: 14px;
+        }
+
+        a {
+            color: #ff8a5c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Decorative Background Elements */
+        .background-circle {
+            position: absolute;
+            top: -150px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background-color: #ffe6e6;
+            border-radius: 50%;
+            z-index: 0;
+            opacity: 0.7;
+        }
+
+        .background-square {
+            position: absolute;
+            bottom: -100px;
+            right: -150px;
+            width: 350px;
+            height: 350px;
+            background-color: #f0f0f0;
+            z-index: 0;
+            opacity: 0.8;
+            transform: rotate(20deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="background-circle"></div>
+    <div class="background-square"></div>
+    <div class="container">
+        <h2>Signup</h2>
+        <form action="/signup" method="POST">
+            <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit">Signup</button>
+            <p>Already have an account? <a href="/login">Login here</a></p>
+        </form>
+    </div>
+</body>
+</html>
